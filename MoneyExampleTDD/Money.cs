@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public class Money
+    public abstract class Money
     {
         protected internal int _amount;
 
@@ -15,6 +15,13 @@ namespace MoneyExampleTDD
             Money money = (Money)obj;
             return _amount == money._amount &&
                               GetType().Equals(money.GetType());
+        }
+
+        public abstract Money Times(int multiplier);
+
+        public static Dollar MakeDollars(int amount)
+        {
+            return new Dollar(amount);
         }
     }
 }
