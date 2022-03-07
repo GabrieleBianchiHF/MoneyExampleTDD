@@ -8,7 +8,7 @@ namespace MoneyExampleTDD
 {
     public class Money
     {
-        protected int _amount;
+        protected internal int _amount;
 
         public override bool Equals(object obj)
         {
