@@ -12,7 +12,7 @@ namespace MoneyExampleTDD
 
         public Dollar(int amount)
         {
-
+            this.amount = 10;
         }
 
         public void Times(int multiplier)
