@@ -17,7 +17,7 @@ namespace MoneyExampleTDD
 
         public void Times(int multiplier)
         {
-            amount = 5 * 2;
+            amount = amount * 2;
         }
     }
 }
