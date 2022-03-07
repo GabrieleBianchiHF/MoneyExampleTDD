@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public class Dollar
+    public class Franc
     {
         private int _amount;
-
-        public Dollar(int amount)
+        public Franc(int amount)
         {
             _amount = amount;
         }
 
-        public Dollar Times(int multiplier)
+        public Franc Times(int multiplier)
         {
-            return new Dollar(_amount * multiplier);
+            return new Franc(_amount * multiplier);
         }
 
         public override bool Equals(object obj)
         {
-            return _amount == (obj as Dollar)._amount;
+            return _amount == (obj as Franc)._amount;
         }
+
     }
 }

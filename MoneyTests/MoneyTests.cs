@@ -9,7 +9,7 @@ namespace MoneyTests
     {
 
         [Fact]
-        public void TestMultiplication()
+        public void TestDollarMultiplication()
         {
             // A A A structure
             // ARRANGE
@@ -20,6 +20,20 @@ namespace MoneyTests
 
             // ACT ASSERT 2
             five.Times(3).Should().Be(new Dollar(15));
+        }
+
+        [Fact]
+        public void TestFrancMultiplication()
+        {
+            // A A A structure
+            // ARRANGE
+            Franc five = new Franc(5);
+
+            // ACT ASSERT 1
+            five.Times(2).Should().Be(new Franc(10));
+
+            // ACT ASSERT 2
+            five.Times(3).Should().Be(new Franc(15));
         }
 
         [Fact]
