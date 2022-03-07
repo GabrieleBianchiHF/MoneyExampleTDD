@@ -9,20 +9,21 @@ namespace MoneyTests
     {
 
         [Fact]
-        public void TestDollarMultiplication()
+        public void TestMultiplication()
         {
             // A A A structure
             // ARRANGE
             Money fiveDollars = Money.MakeDollars(5);
 
             // ACT ASSERT 1
-            fiveDollars.Times(2).Should().Be(new Dollar(10));
+            fiveDollars.Times(2).Should().Be(Money.MakeDollars(10));
 
             // ACT ASSERT 2
-            fiveDollars.Times(3).Should().Be(new Dollar(15));
+            fiveDollars.Times(3).Should().Be(Money.MakeDollars(15));
         }
 
         [Fact]
+        // CAN BE DELETED? WHAT ARE THE TESTED LOGIC?
         public void TestFrancMultiplication()
         {
             // A A A structure
@@ -39,11 +40,11 @@ namespace MoneyTests
         [Fact]
         public void TestEquality()
         {
-            new Dollar(5).Equals(new Dollar(5)).Should().BeTrue(because: "Are the same");
-            new Dollar(5).Equals(new Dollar(6)).Should().BeFalse(because: "Are different");
+            Money.MakeDollars(5).Equals(Money.MakeDollars(5)).Should().BeTrue(because: "Are the same");
+            Money.MakeDollars(5).Equals(Money.MakeDollars(6)).Should().BeFalse(because: "Are different");
             new Franc(5).Equals(new Franc(5)).Should().BeTrue(because: "Are the same");
             new Franc(5).Equals(new Franc(6)).Should().BeFalse(because: "Are different");
-            new Franc(5).Equals(new Dollar(5)).Should().BeFalse(because: "Are different currencies");
+            new Franc(5).Equals(Money.MakeDollars(5)).Should().BeFalse(because: "Are different currencies");
         }
     }
 }

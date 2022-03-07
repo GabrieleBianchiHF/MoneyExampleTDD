@@ -19,7 +19,7 @@ namespace MoneyExampleTDD
 
         public abstract Money Times(int multiplier);
 
-        public static Dollar MakeDollars(int amount)
+        public static Money MakeDollars(int amount)
         {
             return new Dollar(amount);
         }
