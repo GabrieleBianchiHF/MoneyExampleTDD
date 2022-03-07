@@ -37,14 +37,8 @@ namespace MoneyTests
         }
 
         [Fact]
-        public void testEquality()
+        public void TestEquality()
         {
-            //Dollar five = new Dollar(5);
-            //Dollar five2 = new Dollar(5);
-
-            //bool fiveEqualsFive = five.Equals(five2);
-            //bool fiveEqualsSix = five.Equals(new Dollar(6));
-
             new Dollar(5).Equals(new Dollar(5)).Should().BeTrue(because: "Are the same");
             new Dollar(5).Equals(new Dollar(6)).Should().BeFalse(because: "Are different");
             new Franc(5).Equals(new Franc(5)).Should().BeTrue(because: "Are the same");
