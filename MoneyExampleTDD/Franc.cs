@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public class Franc
+    public class Franc : Money
     {
-        private int _amount;
         public Franc(int amount)
         {
             _amount = amount;
@@ -18,11 +17,5 @@ namespace MoneyExampleTDD
         {
             return new Franc(_amount * multiplier);
         }
-
-        public override bool Equals(object obj)
-        {
-            return _amount == (obj as Franc)._amount;
-        }
-
     }
 }
