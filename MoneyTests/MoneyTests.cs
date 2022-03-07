@@ -18,12 +18,12 @@ namespace MoneyTests
             // ACT 1
             Dollar product = five.Times(2);
             // ASSERT 1
-            product.amount.Should().Be(10);
+            product.Should().Be(new Dollar(10));
 
             // ACT 2
             product = five.Times(3);
             // ASSERT 
-            product.amount.Should().Be(15);
+            product.Should().Be(new Dollar(15));
             ;
         }
 
