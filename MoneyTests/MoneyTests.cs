@@ -7,22 +7,9 @@ namespace MoneyTests
 {
     public class MoneyTests
     {
+
         [Fact]
         public void TestMultiplication()
-        {
-            // A A A structure
-            // ARRANGE
-            Dollar five = new Dollar(5);
-
-            // ACT
-            five.Times(2);
-
-            // ASSERT
-            five.amount.Should().Be(10);
-        }
-
-        [Fact]
-        public void TestMultiplication2()
         {
             // A A A structure
             // ARRANGE
@@ -38,6 +25,17 @@ namespace MoneyTests
             // ASSERT 
             product.amount.Should().Be(15);
             ;
+        }
+
+        [Fact]
+        public void testEquality()
+        {
+            Dollar five = new Dollar(5);
+            Dollar five2 = new Dollar(5);
+            bool areEquals = five.Equals(five2);
+
+            areEquals.Should().BeTrue("Are the same");
+
         }
     }
 }

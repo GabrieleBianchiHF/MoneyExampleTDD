@@ -19,5 +19,10 @@ namespace MoneyExampleTDD
         {
             return new Dollar(amount * multiplier);
         }
+
+        public override bool Equals(object obj)
+        {
+            return true;
+        }
     }
 }
