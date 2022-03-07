@@ -15,9 +15,10 @@ namespace MoneyExampleTDD
             this.amount = amount;
         }
 
-        public void Times(int multiplier)
+        public Dollar Times(int multiplier)
         {
             amount *= multiplier;
+            return null;
         }
     }
 }
