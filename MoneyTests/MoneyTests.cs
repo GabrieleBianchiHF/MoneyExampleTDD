@@ -15,16 +15,11 @@ namespace MoneyTests
             // ARRANGE
             Dollar five = new Dollar(5);
 
-            // ACT 1
-            Dollar product = five.Times(2);
-            // ASSERT 1
-            product.Should().Be(new Dollar(10));
+            // ACT ASSERT 1
+            five.Times(2).Should().Be(new Dollar(10));
 
-            // ACT 2
-            product = five.Times(3);
-            // ASSERT 
-            product.Should().Be(new Dollar(15));
-            ;
+            // ACT ASSERT 2
+            five.Times(3).Should().Be(new Dollar(15));
         }
 
         [Fact]
