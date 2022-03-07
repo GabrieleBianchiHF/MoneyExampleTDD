@@ -22,7 +22,7 @@ namespace MoneyExampleTDD
 
         public override bool Equals(object obj)
         {
-            return true;
+            return amount == (obj as Dollar).amount;
         }
     }
 }

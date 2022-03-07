@@ -32,10 +32,11 @@ namespace MoneyTests
         {
             Dollar five = new Dollar(5);
             Dollar five2 = new Dollar(5);
-            bool areEquals = five.Equals(five2);
+            bool fiveEqualsFive = five.Equals(five2);
+            bool fiveEqualsSix = five.Equals(new Dollar(6));
 
-            areEquals.Should().BeTrue("Are the same");
-
+            fiveEqualsFive.Should().BeTrue(because: "Are the same");
+            fiveEqualsSix.Should().BeFalse(because: "Are different");
         }
     }
 }
