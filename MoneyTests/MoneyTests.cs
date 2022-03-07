@@ -40,11 +40,11 @@ namespace MoneyTests
         [Fact]
         public void TestEquality()
         {
-            Money.MakeDollars(5).Equals(Money.MakeDollars(5)).Should().BeTrue(because: "Are the same");
-            Money.MakeDollars(5).Equals(Money.MakeDollars(6)).Should().BeFalse(because: "Are different");
-            new Franc(5).Equals(new Franc(5)).Should().BeTrue(because: "Are the same");
-            new Franc(5).Equals(new Franc(6)).Should().BeFalse(because: "Are different");
-            new Franc(5).Equals(Money.MakeDollars(5)).Should().BeFalse(because: "Are different currencies");
+            Money.MakeDollars(5).Equals(Money.MakeDollars(5)).Should().BeTrue(because: "Are the same amounts");
+            Money.MakeDollars(5).Equals(Money.MakeDollars(6)).Should().BeFalse(because: "Are different amounts");
+            Money.MakeFrancs(5).Equals(Money.MakeFrancs(5)).Should().BeTrue(because: "Are the same amounts");
+            Money.MakeFrancs(5).Equals(Money.MakeFrancs(6)).Should().BeFalse(because: "Are different amounts");
+            Money.MakeFrancs(5).Equals(Money.MakeDollars(5)).Should().BeFalse(because: "Are different currencies");
         }
     }
 }
