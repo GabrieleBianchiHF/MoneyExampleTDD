@@ -28,13 +28,13 @@ namespace MoneyTests
         {
             // A A A structure
             // ARRANGE
-            Franc five = new Franc(5);
+            Money fiveFranc = Money.MakeFrancs(5);
 
             // ACT ASSERT 1
-            five.Times(2).Should().Be(new Franc(10));
+            fiveFranc.Times(2).Should().Be(Money.MakeFrancs(10));
 
             // ACT ASSERT 2
-            five.Times(3).Should().Be(new Franc(15));
+            fiveFranc.Times(3).Should().Be(Money.MakeFrancs(15));
         }
 
         [Fact]

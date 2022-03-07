@@ -23,5 +23,10 @@ namespace MoneyExampleTDD
         {
             return new Dollar(amount);
         }
+
+        public static Money MakeFrancs(int amount)
+        {
+            return new Franc(amount);
+        }
     }
 }
