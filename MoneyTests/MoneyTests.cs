@@ -34,7 +34,7 @@ namespace MoneyTests
             product.amount.Should().Be(10);
 
             // ACT 2
-            product.Times(3);
+            product = five.Times(3);
             // ASSERT 
             product.amount.Should().Be(15);
             ;
