@@ -8,7 +8,6 @@ namespace MoneyExampleTDD
 {
     public class Dollar : Money
     {
-        private int _amount;
 
         public Dollar(int amount)
         {
