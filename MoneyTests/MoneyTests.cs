@@ -43,6 +43,7 @@ namespace MoneyTests
             new Dollar(5).Equals(new Dollar(6)).Should().BeFalse(because: "Are different");
             new Franc(5).Equals(new Franc(5)).Should().BeTrue(because: "Are the same");
             new Franc(5).Equals(new Franc(6)).Should().BeFalse(because: "Are different");
+            new Franc(5).Equals(new Dollar(5)).Should().BeFalse(because: "Are different currencies");
         }
     }
 }
