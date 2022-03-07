@@ -13,7 +13,7 @@ namespace MoneyExampleTDD
             _amount = amount;
         }
 
-        public Franc Times(int multiplier)
+        public Money Times(int multiplier)
         {
             return new Franc(_amount * multiplier);
         }
