@@ -42,8 +42,6 @@ namespace MoneyTests
         {
             Money.MakeDollars(5).Equals(Money.MakeDollars(5)).Should().BeTrue(because: "Are the same amounts");
             Money.MakeDollars(5).Equals(Money.MakeDollars(6)).Should().BeFalse(because: "Are different amounts");
-            Money.MakeFrancs(5).Equals(Money.MakeFrancs(5)).Should().BeTrue(because: "Are the same amounts");
-            Money.MakeFrancs(5).Equals(Money.MakeFrancs(6)).Should().BeFalse(because: "Are different amounts");
             Money.MakeFrancs(5).Equals(Money.MakeDollars(5)).Should().BeFalse(because: "Are different currencies");
         }
 
