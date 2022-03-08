@@ -26,8 +26,7 @@ namespace MoneyExampleTDD
         public override bool Equals(object obj)
         {
             Money money = (Money)obj;
-            return _amount == money._amount &&
-                              GetType().Equals(money.GetType());
+            return _amount == money._amount && Currency.Equals(money.Currency);
         }
 
         public Money Times(int multiplier)
