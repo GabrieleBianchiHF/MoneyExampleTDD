@@ -8,15 +8,15 @@ namespace MoneyExampleTDD
 {
     public class Dollar : Money
     {
-        public Dollar(int amount)
+        public Dollar(int amount, string currency)
         {
             _amount = amount;
-            _Currency = "USD";
+            _Currency = currency;
         }
 
         public override Money Times(int multiplier)
         {
-            return new Dollar(_amount * multiplier);
+            return MakeDollars(_amount * multiplier);
         }
     }
 }

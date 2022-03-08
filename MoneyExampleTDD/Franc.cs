@@ -8,15 +8,15 @@ namespace MoneyExampleTDD
 {
     public class Franc : Money
     {
-        public Franc(int amount)
+        public Franc(int amount, string currency)
         {
             _amount = amount;
-            _Currency = "CHF";
+            _Currency = currency;
         }
 
         public override Money Times(int multiplier)
         {
-            return new Franc(_amount * multiplier);
+            return MakeFrancs(_amount * multiplier);
         }
     }
 }
