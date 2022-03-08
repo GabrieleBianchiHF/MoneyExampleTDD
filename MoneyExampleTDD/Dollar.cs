@@ -10,10 +10,5 @@ namespace MoneyExampleTDD
     {
         public Dollar(int amount, string currency) : base(amount, currency)
         { }
-
-        public override Money Times(int multiplier)
-        {
-            return new Money(_amount * multiplier, Currency);
-        }
     }
 }

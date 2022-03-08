@@ -30,7 +30,10 @@ namespace MoneyExampleTDD
                               GetType().Equals(money.GetType());
         }
 
-        public abstract Money Times(int multiplier);
+        public Money Times(int multiplier)
+        {
+            return null;
+        }
 
         public static Money MakeDollars(int amount)
         {
