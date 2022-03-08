@@ -8,16 +8,17 @@ namespace MoneyExampleTDD
 {
     public class Franc : Money
     {
-        private string _francCurrency;
+        private string _Currency;
+
         public Franc(int amount)
         {
             _amount = amount;
-            _francCurrency = "CHF";
+            _Currency = "CHF";
         }
 
         public override string Currency {
-            get => _francCurrency;
-            set => _francCurrency = value; }
+            get => _Currency;
+            set => _Currency = value; }
 
         public override Money Times(int multiplier)
         {
