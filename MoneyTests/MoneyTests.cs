@@ -23,21 +23,6 @@ namespace MoneyTests
         }
 
         [Fact]
-        // CAN BE DELETED? WHAT ARE THE TESTED LOGIC?
-        public void TestFrancMultiplication()
-        {
-            // A A A structure
-            // ARRANGE
-            Money fiveFranc = Money.MakeFrancs(5);
-
-            // ACT ASSERT 1
-            fiveFranc.Times(2).Should().Be(Money.MakeFrancs(10));
-
-            // ACT ASSERT 2
-            fiveFranc.Times(3).Should().Be(Money.MakeFrancs(15));
-        }
-
-        [Fact]
         public void TestEquality()
         {
             Money.MakeDollars(5).Equals(Money.MakeDollars(5)).Should().BeTrue(because: "Are the same amounts");
