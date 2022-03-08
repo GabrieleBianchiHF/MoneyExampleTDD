@@ -11,6 +11,12 @@ namespace MoneyExampleTDD
         protected internal int _amount;
         protected string _Currency;
 
+        protected Money(int amount, string currency)
+        {
+            _amount = amount;
+            _Currency = currency;
+        }
+
         public string Currency
         {
             get => _Currency;
@@ -28,12 +34,12 @@ namespace MoneyExampleTDD
 
         public static Money MakeDollars(int amount)
         {
-            return new Dollar(amount, null);
+            return new Dollar(amount, "USD");
         }
 
         public static Money MakeFrancs(int amount)
         {
-            return new Franc(amount, null);
+            return new Franc(amount, "CHF");
         }
     }
 }
