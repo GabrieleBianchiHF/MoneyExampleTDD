@@ -13,6 +13,8 @@ namespace MoneyExampleTDD
             _amount = amount;
         }
 
+        public override string Currency { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override Money Times(int multiplier)
         {
             return new Franc(_amount * multiplier);
