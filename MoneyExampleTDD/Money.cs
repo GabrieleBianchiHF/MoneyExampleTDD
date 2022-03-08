@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public abstract class Money
+    public class Money
     {
         protected internal int _amount;
         protected string _Currency;
