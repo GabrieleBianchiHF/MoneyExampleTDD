@@ -14,12 +14,15 @@ namespace MoneyTests
             // A A A structure
             // ARRANGE
             Money fiveDollars = Money.MakeDollars(5);
+            Money fiveFrancs = Money.MakeFrancs(5);
 
             // ACT ASSERT 1
             fiveDollars.Times(2).Should().Be(Money.MakeDollars(10));
+            fiveFrancs.Times(2).Should().Be(Money.MakeFrancs(10));
 
             // ACT ASSERT 2
             fiveDollars.Times(3).Should().Be(Money.MakeDollars(15));
+            fiveFrancs.Times(3).Should().Be(Money.MakeFrancs(15));
         }
 
         [Fact]
