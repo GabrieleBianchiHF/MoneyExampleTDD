@@ -48,12 +48,6 @@ namespace MoneyTests
         }
 
         [Fact]
-        public void TestDifferentClassEquality()
-        {
-            new Money(10, "CHF").Equals(new Franc(10, "CHF")).Should().BeTrue(because: "Are different class but have the same obj.");
-        }
-
-        [Fact]
         public void TestCurrency()
         {
             string dollarCurrency = "USD";

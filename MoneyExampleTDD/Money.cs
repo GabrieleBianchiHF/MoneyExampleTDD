@@ -36,12 +36,12 @@ namespace MoneyExampleTDD
 
         public static Money MakeDollars(int amount)
         {
-            return new Dollar(amount, "USD");
+            return new Money(amount, "USD");
         }
 
         public static Money MakeFrancs(int amount)
         {
-            return new Franc(amount, "CHF");
+            return new Money(amount, "CHF");
         }
     }
 }
