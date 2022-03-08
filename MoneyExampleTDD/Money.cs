@@ -32,7 +32,7 @@ namespace MoneyExampleTDD
 
         public Money Times(int multiplier)
         {
-            return null;
+            return new Money(_amount * multiplier, Currency);
         }
 
         public static Money MakeDollars(int amount)
