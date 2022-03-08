@@ -9,8 +9,13 @@ namespace MoneyExampleTDD
     public abstract class Money
     {
         protected internal int _amount;
+        protected string _Currency;
 
-        public abstract string Currency { get; set; }
+        public string Currency
+        {
+            get => _Currency;
+            set => _Currency = value;
+        }
 
         public override bool Equals(object obj)
         {
