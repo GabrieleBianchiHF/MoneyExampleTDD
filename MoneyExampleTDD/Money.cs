@@ -10,6 +10,8 @@ namespace MoneyExampleTDD
     {
         protected internal int _amount;
 
+        public string Currency { get; set; }
+
         public override bool Equals(object obj)
         {
             Money money = (Money)obj;

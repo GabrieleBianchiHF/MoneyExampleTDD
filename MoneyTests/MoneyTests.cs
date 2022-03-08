@@ -46,5 +46,17 @@ namespace MoneyTests
             Money.MakeFrancs(5).Equals(Money.MakeFrancs(6)).Should().BeFalse(because: "Are different amounts");
             Money.MakeFrancs(5).Equals(Money.MakeDollars(5)).Should().BeFalse(because: "Are different currencies");
         }
+
+        [Fact]
+        public void TestCurrency()
+        {
+            string dollarCurrency = "USD";
+            string francCurrency = "CHF";
+            Money oneDollar = Money.MakeDollars(1);
+            Money oneFranc = Money.MakeFrancs(1);
+
+            oneDollar.Currency.Should().BeEquivalentTo(dollarCurrency);
+            oneFranc.Currency.Should().BeEquivalentTo(francCurrency);
+        }
     }
 }
