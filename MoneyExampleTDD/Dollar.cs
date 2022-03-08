@@ -8,13 +8,18 @@ namespace MoneyExampleTDD
 {
     public class Dollar : Money
     {
+        private string _dollarCurrency;
 
         public Dollar(int amount)
         {
             _amount = amount;
+            _dollarCurrency = "USD";
         }
 
-        public override string Currency { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override string Currency { 
+            get => _dollarCurrency;
+            set => _dollarCurrency = value;
+        }
 
         public override Money Times(int multiplier)
         {
