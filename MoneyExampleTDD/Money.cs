@@ -11,7 +11,7 @@ namespace MoneyExampleTDD
         protected internal int _amount;
         protected string _Currency;
 
-        protected Money(int amount, string currency)
+        public Money(int amount, string currency)
         {
             _amount = amount;
             _Currency = currency;
