@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public class Money
+    public class Money : MoneyExpression
     {
         protected internal int _amount;
         protected string _Currency;
@@ -44,7 +44,7 @@ namespace MoneyExampleTDD
             return new Money(amount, "CHF");
         }
 
-        public Money Plus(Money addend)
+        public MoneyExpression Plus(Money addend)
         {
             // Try obvious implementation
             return new Money(_amount + addend._amount, Currency);
