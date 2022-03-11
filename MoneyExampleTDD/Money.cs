@@ -43,5 +43,11 @@ namespace MoneyExampleTDD
         {
             return new Money(amount, "CHF");
         }
+
+        public Money Plus(Money addend)
+        {
+            // Try obvious implementation
+            return new Money(_amount + addend._amount, Currency);
+        }
     }
 }

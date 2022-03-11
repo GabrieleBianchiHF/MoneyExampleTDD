@@ -53,11 +53,10 @@ namespace MoneyTests
             Money otherFiveDollars = Money.MakeDollars(5);
             
             // ACT
-            Money sum = fiveDollars.plus(otherFiveDollars);
+            Money sum = fiveDollars.Plus(otherFiveDollars);
 
             // ASSERT
             sum.Should().Be(Money.MakeDollars(10));
-
         }
     }
 }
