@@ -44,5 +44,20 @@ namespace MoneyTests
             oneDollar.Currency.Should().BeEquivalentTo(dollarCurrency);
             oneFranc.Currency.Should().BeEquivalentTo(francCurrency);
         }
+
+        [Fact]
+        public void TestSimpleAddition()
+        {
+            // ARRANGE
+            Money fiveDollars = Money.MakeDollars(5);
+            Money otherFiveDollars = Money.MakeDollars(5);
+            
+            // ACT
+            Money sum = fiveDollars.plus(otherFiveDollars);
+
+            // ASSERT
+            sum.Should().Be(Money.MakeDollars(10));
+
+        }
     }
 }
