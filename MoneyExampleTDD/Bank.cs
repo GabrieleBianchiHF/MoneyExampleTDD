@@ -8,6 +8,9 @@ namespace MoneyExampleTDD
 {
     public class Bank
     {
-        public Money Reduce(MoneyExpression moneySource, string toCurrency) { return null; }
+        public Money Reduce(MoneyExpression moneySource, string toCurrency)
+        {
+            return Money.MakeDollars(10);
+        }
     }
 }
