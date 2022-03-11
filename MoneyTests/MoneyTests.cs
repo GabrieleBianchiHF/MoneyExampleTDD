@@ -51,12 +51,14 @@ namespace MoneyTests
             // ARRANGE
             Money fiveDollars = Money.MakeDollars(5);
             Money otherFiveDollars = Money.MakeDollars(5);
-            
+            Bank bank = new Bank();
+
             // ACT
-            Money sum = fiveDollars.Plus(otherFiveDollars);
+            MoneyExpression sum = fiveDollars.Plus(otherFiveDollars);
+            Money reduced = bank.Reduce(sum, "USD");
 
             // ASSERT
-            sum.Should().Be(Money.MakeDollars(10));
+            reduced.Should().Be(Money.MakeDollars(10));
         }
     }
 }
