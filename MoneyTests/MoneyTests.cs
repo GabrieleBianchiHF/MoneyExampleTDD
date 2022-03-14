@@ -1,13 +1,11 @@
-using System;
-using Xunit;
 using FluentAssertions;
 using MoneyExampleTDD;
+using Xunit;
 
 namespace MoneyTests
 {
     public class MoneyTests
     {
-
         [Fact]
         public void TestMultiplication()
         {
@@ -59,6 +57,16 @@ namespace MoneyTests
 
             // ASSERT
             reduced.Should().Be(Money.MakeDollars(10));
+        }
+
+        [Fact]
+        public void TestPlusReturnsSum()
+        {
+            Money fiveDollar = Money.MakeDollars(5);
+            MoneyExpression result = fiveDollar.Plus(fiveDollar);
+            Sum sum = (result as Sum);
+            fiveDollar.Should().BeEquivalentTo(sum.First);
+            fiveDollar.Should().BeEquivalentTo(sum.Second);
         }
     }
 }

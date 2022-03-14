@@ -50,4 +50,10 @@ namespace MoneyExampleTDD
             return new Money(_amount + addend._amount, Currency);
         }
     }
+
+    public class Sum
+    {
+        public Money First { get; }
+        public Money Second { get; }
+    }
 }
