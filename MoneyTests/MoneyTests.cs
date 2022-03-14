@@ -65,8 +65,18 @@ namespace MoneyTests
             Money fiveDollar = Money.MakeDollars(5);
             MoneyExpression result = fiveDollar.Plus(fiveDollar);
             Sum sum = (result as Sum);
-            fiveDollar.Should().BeEquivalentTo(sum.First);
-            fiveDollar.Should().BeEquivalentTo(sum.Second);
+            fiveDollar.Should().Be(sum.First);
+            fiveDollar.Should().Be(sum.Second);
+        }
+
+        [Fact]
+        public void TestReduceSum()
+        {
+            MoneyExpression sum = new Sum(Money.MakeDollars(3), Money.MakeDollars(4));
+            Bank bank = new Bank();
+
+            Money result = bank.Reduce(sum, "USD");
+            result.Should().Be(Money.MakeDollars(7));
         }
   
     }

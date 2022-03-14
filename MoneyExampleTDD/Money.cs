@@ -8,8 +8,8 @@ namespace MoneyExampleTDD
 {
     public class Money : MoneyExpression
     {
-        protected internal int _amount;
-        protected string _Currency;
+        private int _amount;
+        private string _Currency;
 
         public Money(int amount, string currency)
         {
@@ -20,7 +20,11 @@ namespace MoneyExampleTDD
         public string Currency
         {
             get => _Currency;
-            set => _Currency = value;
+        }
+
+        public int Amount
+        {
+            get => _amount;
         }
 
         public override bool Equals(object obj)
