@@ -11,9 +11,7 @@ namespace MoneyExampleTDD
         public Money Reduce(MoneyExpression moneySource, string toCurrency)
         {
             Sum sum = (Sum)moneySource;
-            int amount = sum.First.Amount + sum.Second.Amount;
-            return new Money(amount, toCurrency);
-
+            return sum.Reduce(toCurrency);
         }
     }
 }
