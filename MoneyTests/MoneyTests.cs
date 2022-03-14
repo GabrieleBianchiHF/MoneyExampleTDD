@@ -68,5 +68,6 @@ namespace MoneyTests
             fiveDollar.Should().BeEquivalentTo(sum.First);
             fiveDollar.Should().BeEquivalentTo(sum.Second);
         }
+  
     }
 }

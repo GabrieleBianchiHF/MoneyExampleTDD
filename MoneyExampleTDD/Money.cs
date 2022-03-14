@@ -47,13 +47,7 @@ namespace MoneyExampleTDD
         public MoneyExpression Plus(Money addend)
         {
             // Try obvious implementation
-            return new Money(_amount + addend._amount, Currency);
+            return new Sum(this, addend);
         }
-    }
-
-    public class Sum
-    {
-        public Money First { get; }
-        public Money Second { get; }
     }
 }
