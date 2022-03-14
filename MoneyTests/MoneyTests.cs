@@ -78,6 +78,16 @@ namespace MoneyTests
             Money result = bank.Reduce(sum, "USD");
             result.Should().Be(Money.MakeDollars(7));
         }
+
+        [Fact]
+        public void TestReduceMoney()
+        {
+            Bank bank = new Bank();
+            Money oneDollar = Money.MakeDollars(1);
+            Money result = bank.Reduce(oneDollar, oneDollar.Currency);
+
+            result.Should().Be(oneDollar);
+        }
   
     }
 }
