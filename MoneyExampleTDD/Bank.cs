@@ -10,12 +10,7 @@ namespace MoneyExampleTDD
     {
         public Money Reduce(MoneyExpression moneySource, string toCurrency)
         {
-            if (moneySource is Money)
-                return moneySource as Money;
-            else
-            {
-                return (moneySource as Sum).Reduce(toCurrency);
-            }
+            return moneySource.Reduce(toCurrency: toCurrency);
         }
     }
 }

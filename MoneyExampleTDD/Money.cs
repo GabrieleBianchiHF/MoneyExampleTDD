@@ -53,5 +53,10 @@ namespace MoneyExampleTDD
             // Try obvious implementation
             return new Sum(this, addend);
         }
+
+        public Money Reduce(string toCurrency)
+        {
+            return this;
+        }
     }
 }
