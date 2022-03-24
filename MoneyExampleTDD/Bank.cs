@@ -19,6 +19,8 @@ namespace MoneyExampleTDD
         {
             if (_Rates.TryGetValue(new Tuple<string, string>(fromCurrency, toCurrency), out int rate))
                 return rate;
+            else if (fromCurrency.Equals(toCurrency))
+                return 1;
             else
                 throw new InvalidOperationException("The required from/to key is not present.");
         }
