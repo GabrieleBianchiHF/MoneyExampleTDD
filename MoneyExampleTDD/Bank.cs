@@ -13,7 +13,7 @@ namespace MoneyExampleTDD
             return moneySource.Reduce(this, toCurrency: toCurrency);
         }
 
-        int GetRate(string fromCurrency, string toCurrency)
+        public int GetRate(string fromCurrency, string toCurrency)
         {
             return fromCurrency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
         }
