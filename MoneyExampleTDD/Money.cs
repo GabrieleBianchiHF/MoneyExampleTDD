@@ -50,7 +50,7 @@
 
         public Money Reduce(Bank bank, string toCurrency)
         {
-            int rate = Currency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
+            int rate = bank.GetRate(fromCurrency: Currency, toCurrency: toCurrency);
             return new Money(_amount / rate, toCurrency);
         }
     }
