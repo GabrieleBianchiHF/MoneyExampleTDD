@@ -48,7 +48,7 @@ namespace MoneyTests
         {
             // ARRANGE
             Money fiveDollars = Money.MakeDollars(5);
-            Money otherFiveDollars = Money.MakeDollars(5);
+            Money otherFiveDollars = Money.MakeDollars(6);
             Bank bank = new Bank();
 
             // ACT
@@ -56,15 +56,17 @@ namespace MoneyTests
             Money reduced = bank.Reduce(sum, "USD");
 
             // ASSERT
-            reduced.Should().Be(Money.MakeDollars(10));
+            reduced.Should().Be(Money.MakeDollars(11));
         }
 
         [Fact]
         public void TestPlusReturnsSum()
         {
             Money fiveDollar = Money.MakeDollars(5);
+
             MoneyExpression result = fiveDollar.Plus(fiveDollar);
             Sum sum = (result as Sum);
+
             fiveDollar.Should().Be(sum.First);
             fiveDollar.Should().Be(sum.Second);
         }
@@ -87,6 +89,17 @@ namespace MoneyTests
             Money result = bank.Reduce(oneDollar, oneDollar.Currency);
 
             result.Should().Be(oneDollar);
+        }
+
+        [Fact]
+        public void TestReduceMoneyDifferentCurrency()
+        {
+            Bank bank = new Bank();
+            bank.addRate("CHF", "USD", 2);
+
+            Money result = bank.Reduce(Money.MakeFrancs(2), "USD");
+
+            result.Should().Be(Money.MakeDollars(1));
         }
   
     }
