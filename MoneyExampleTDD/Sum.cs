@@ -25,5 +25,10 @@
             double amount = First.Reduce(bank, toCurrency).Amount + Second.Reduce(bank, toCurrency).Amount;
             return new Money(amount, toCurrency);
         }
+
+        public override string ToString()
+        {
+            return $"{First} + {Second}";
+        }
     }
 }

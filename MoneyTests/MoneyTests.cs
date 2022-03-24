@@ -167,7 +167,7 @@ namespace MoneyTests
         [Fact]
         public void TestInverseRate()
         {
-            IMoneyExpression oneDollar = Money.MakeDollars(1);
+            Money oneDollar = Money.MakeDollars(1);
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
 
@@ -175,6 +175,16 @@ namespace MoneyTests
             Money result = bank.Reduce(someFrancs, "USD");
 
             result.Should().Be(oneDollar);
+        }
+
+        [Fact]
+        public void TestMoneyToString()
+        {
+            Money oneDollar = Money.MakeDollars(1);
+
+            string result = oneDollar.ToString();
+
+            result.Should().Be("1.00 USD");
         }
     }
 }

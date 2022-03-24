@@ -54,5 +54,10 @@
             double rate = bank.GetRate(fromCurrency: Currency, toCurrency: toCurrency);
             return new Money(_amount / rate, toCurrency);     
         }
+
+        public override string ToString()
+        {
+            return $"{Amount:N2} {Currency}";
+        }
     }
 }
