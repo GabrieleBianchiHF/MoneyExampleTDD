@@ -12,7 +12,7 @@
 
         public Money Reduce(Bank bank, string toCurrency)
         {
-            int amount = First.Amount + Second.Amount;
+            int amount = First.Reduce(bank, toCurrency).Amount + Second.Reduce(bank, toCurrency).Amount;
             return new Money(amount, toCurrency);
         }
     }
