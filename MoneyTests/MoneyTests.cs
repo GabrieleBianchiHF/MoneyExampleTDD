@@ -163,5 +163,17 @@ namespace MoneyTests
             fiveDollars.Times(3).Should().Be(Money.MakeDollars(16.5));
             fiveFrancs.Times(3).Should().Be(Money.MakeFrancs(16.5));
         }
+
+        [Fact]
+        public void TestInverseRate()
+        {
+            IMoneyExpression fiveDollars = Money.MakeDollars(5);
+            IMoneyExpression tenFrancs = Money.MakeFrancs(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+
+            Money result = bank.Reduce(tenFrancs.Plus(fiveDollars), "CHF");
+            result.Should().Be(Money.MakeDollars(12.5));
+        }
     }
 }
