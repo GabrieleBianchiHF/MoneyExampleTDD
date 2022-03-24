@@ -8,7 +8,12 @@ namespace MoneyExampleTDD
 {
     public class Bank
     {
-        private Dictionary< Tuple<string, string>, int > _Rates;
+        private readonly Dictionary<Tuple<string, string>, int> _Rates;
+
+        public Bank()
+        {
+            _Rates = new Dictionary<Tuple<string, string>, int>();
+        }
 
         public Money Reduce(MoneyExpression moneySource, string toCurrency)
         {
