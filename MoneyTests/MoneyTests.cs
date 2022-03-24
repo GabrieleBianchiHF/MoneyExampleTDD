@@ -111,6 +111,16 @@ namespace MoneyTests
             currencies.Item1.Should().Be(currencies.Item2);
         }
 
+        [Fact]
+        public void TestRateSameCurrency()
+        {
+            Bank bank = new Bank();
+
+            int rate = bank.GetRate("USD", "USD");
+
+            rate.Should().Be(1);
+        }
+
   
     }
 }
