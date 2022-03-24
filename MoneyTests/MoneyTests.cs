@@ -134,6 +134,17 @@ namespace MoneyTests
             result.Should().Be(Money.MakeDollars(10));
         }
 
+        [Fact]
+        public void TestSumPlusMoney()
+        {
+            IMoneyExpression fiveDollars = Money.MakeDollars(5);
+            IMoneyExpression tenFrancs = Money.MakeFrancs(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
 
+            IMoneyExpression sum = new Sum(fiveDollars, tenFrancs).Plus(fiveDollars);
+            Money result = bank.Reduce(sum, "USD");
+            result.Should().Be(Money.MakeDollars(15));
+        }
     }
 }
