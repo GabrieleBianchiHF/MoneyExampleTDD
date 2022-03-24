@@ -12,6 +12,6 @@ namespace MoneyExampleTDD
 
         IMoneyExpression Plus(IMoneyExpression addend);
 
-        IMoneyExpression Times(int multiplier);
+        IMoneyExpression Times(double multiplier);
     }
 }

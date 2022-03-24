@@ -2,10 +2,10 @@
 {
     public class Money : IMoneyExpression
     {
-        private int _amount;
+        private double _amount;
         private string _Currency;
 
-        public Money(int amount, string currency)
+        public Money(double amount, string currency)
         {
             _amount = amount;
             _Currency = currency;
@@ -16,7 +16,7 @@
             get => _Currency;
         }
 
-        public int Amount
+        public double Amount
         {
             get => _amount;
         }
@@ -28,12 +28,12 @@
         }
 
 
-        public static Money MakeDollars(int amount)
+        public static Money MakeDollars(double amount)
         {
             return new Money(amount, "USD");
         }
 
-        public static Money MakeFrancs(int amount)
+        public static Money MakeFrancs(double amount)
         {
             return new Money(amount, "CHF");
         }
@@ -44,14 +44,14 @@
             return new Sum(this, addend);
         }
 
-        public IMoneyExpression Times(int multiplier)
+        public IMoneyExpression Times(double multiplier)
         {
             return new Money(_amount * multiplier, Currency);
         }
 
         public Money Reduce(Bank bank, string toCurrency)
         {
-            int rate = bank.GetRate(fromCurrency: Currency, toCurrency: toCurrency);
+            double rate = bank.GetRate(fromCurrency: Currency, toCurrency: toCurrency);
             return new Money(_amount / rate, toCurrency);     
         }
     }

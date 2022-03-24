@@ -146,5 +146,22 @@ namespace MoneyTests
             Money result = bank.Reduce(sum, "USD");
             result.Should().Be(Money.MakeDollars(15));
         }
+
+        [Fact]
+        public void TestMultiplicationWithDoubles()
+        {
+            // A A A structure
+            // ARRANGE
+            Money fiveDollars = Money.MakeDollars(5.5);
+            Money fiveFrancs = Money.MakeFrancs(5.5);
+
+            // ACT ASSERT 1
+            fiveDollars.Times(2.0).Should().Be(Money.MakeDollars(11.0));
+            fiveFrancs.Times(2.0).Should().Be(Money.MakeFrancs(11.0));
+
+            // ACT ASSERT 2
+            fiveDollars.Times(3).Should().Be(Money.MakeDollars(16.5));
+            fiveFrancs.Times(3).Should().Be(Money.MakeFrancs(16.5));
+        }
     }
 }

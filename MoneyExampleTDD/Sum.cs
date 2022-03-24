@@ -15,14 +15,14 @@
             return new Sum(this, addend);
         }
 
-        public IMoneyExpression Times(int multiplier)
+        public IMoneyExpression Times(double multiplier)
         {
             return new Sum(First.Times(multiplier), Second.Times(multiplier));
         }
 
         public Money Reduce(Bank bank, string toCurrency)
         {
-            int amount = First.Reduce(bank, toCurrency).Amount + Second.Reduce(bank, toCurrency).Amount;
+            double amount = First.Reduce(bank, toCurrency).Amount + Second.Reduce(bank, toCurrency).Amount;
             return new Money(amount, toCurrency);
         }
     }
