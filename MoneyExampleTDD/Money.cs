@@ -27,10 +27,6 @@
             return _amount == money._amount && Currency.Equals(money.Currency);
         }
 
-        public IMoneyExpression Times(int multiplier)
-        {
-            return new Money(_amount * multiplier, Currency);
-        }
 
         public static Money MakeDollars(int amount)
         {
@@ -46,6 +42,11 @@
         {
             // Try obvious implementation
             return new Sum(this, addend);
+        }
+
+        public IMoneyExpression Times(int multiplier)
+        {
+            return new Money(_amount * multiplier, Currency);
         }
 
         public Money Reduce(Bank bank, string toCurrency)

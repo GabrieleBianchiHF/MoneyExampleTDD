@@ -11,5 +11,7 @@ namespace MoneyExampleTDD
         Money Reduce(Bank bank, string toCurrency);
 
         IMoneyExpression Plus(IMoneyExpression addend);
+
+        IMoneyExpression Times(int multiplier);
     }
 }

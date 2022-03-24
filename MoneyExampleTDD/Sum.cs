@@ -12,7 +12,12 @@
 
         public IMoneyExpression Plus(IMoneyExpression addend)
         {
-            return null;
+            return new Sum(this, addend);
+        }
+
+        public IMoneyExpression Times(int multiplier)
+        {
+            return new Sum(First.Times(multiplier), Second.Times(multiplier));
         }
 
         public Money Reduce(Bank bank, string toCurrency)
