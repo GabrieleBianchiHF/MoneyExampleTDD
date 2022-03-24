@@ -53,7 +53,7 @@ namespace MoneyTests
             Bank bank = new Bank();
 
             // ACT
-            MoneyExpression sum = fiveDollars.Plus(otherFiveDollars);
+            IMoneyExpression sum = fiveDollars.Plus(otherFiveDollars);
             Money reduced = bank.Reduce(sum, "USD");
 
             // ASSERT
@@ -65,7 +65,7 @@ namespace MoneyTests
         {
             Money fiveDollar = Money.MakeDollars(5);
 
-            MoneyExpression result = fiveDollar.Plus(fiveDollar);
+            IMoneyExpression result = fiveDollar.Plus(fiveDollar);
             Sum sum = (result as Sum);
 
             fiveDollar.Should().Be(sum.First);
@@ -75,7 +75,7 @@ namespace MoneyTests
         [Fact]
         public void TestReduceSum()
         {
-            MoneyExpression sum = new Sum(Money.MakeDollars(3), Money.MakeDollars(4));
+            IMoneyExpression sum = new Sum(Money.MakeDollars(3), Money.MakeDollars(4));
             Bank bank = new Bank();
 
             Money result = bank.Reduce(sum, "USD");

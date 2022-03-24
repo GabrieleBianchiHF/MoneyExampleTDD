@@ -1,6 +1,6 @@
 ﻿namespace MoneyExampleTDD
 {
-    public class Money : MoneyExpression
+    public class Money : IMoneyExpression
     {
         private int _amount;
         private string _Currency;
@@ -42,7 +42,7 @@
             return new Money(amount, "CHF");
         }
 
-        public MoneyExpression Plus(Money addend)
+        public IMoneyExpression Plus(Money addend)
         {
             // Try obvious implementation
             return new Sum(this, addend);

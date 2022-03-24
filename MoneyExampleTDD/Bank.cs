@@ -10,7 +10,7 @@ namespace MoneyExampleTDD
     {
         private readonly Dictionary<Tuple<string, string>, int> _Rates = new Dictionary<Tuple<string, string>, int>();
 
-        public Money Reduce(MoneyExpression moneySource, string toCurrency)
+        public Money Reduce(IMoneyExpression moneySource, string toCurrency)
         {
             return moneySource.Reduce(this, toCurrency: toCurrency);
         }

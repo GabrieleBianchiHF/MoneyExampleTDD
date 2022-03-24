@@ -1,6 +1,6 @@
 ﻿namespace MoneyExampleTDD
 {
-    public class Sum : MoneyExpression
+    public class Sum : IMoneyExpression
     {
         public Sum(Money first, Money second)
         {

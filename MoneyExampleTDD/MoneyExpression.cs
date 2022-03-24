@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoneyExampleTDD
 {
-    public interface MoneyExpression
+    public interface IMoneyExpression
     {
         Money Reduce(Bank bank, string toCurrency);
     }
