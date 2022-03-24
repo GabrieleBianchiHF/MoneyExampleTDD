@@ -167,13 +167,14 @@ namespace MoneyTests
         [Fact]
         public void TestInverseRate()
         {
-            IMoneyExpression fiveDollars = Money.MakeDollars(5);
-            IMoneyExpression tenFrancs = Money.MakeFrancs(10);
+            IMoneyExpression oneDollar = Money.MakeDollars(1);
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
 
-            Money result = bank.Reduce(tenFrancs.Plus(fiveDollars), "CHF");
-            result.Should().Be(Money.MakeFrancs(20.0));
+            Money someFrancs = bank.Reduce(oneDollar, "CHF");
+            Money result = bank.Reduce(someFrancs, "USD");
+
+            result.Should().Be(oneDollar);
         }
     }
 }
