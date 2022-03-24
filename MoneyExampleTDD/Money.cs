@@ -51,7 +51,7 @@
         public Money Reduce(Bank bank, string toCurrency)
         {
             int rate = bank.GetRate(fromCurrency: Currency, toCurrency: toCurrency);
-            return new Money(_amount / rate, toCurrency);
+            return new Money(_amount / rate, toCurrency);     
         }
     }
 }

@@ -95,7 +95,7 @@ namespace MoneyTests
         public void TestReduceMoneyDifferentCurrency()
         {
             Bank bank = new Bank();
-            bank.addRate("CHF", "USD", 2);
+            bank.AddRate("CHF", "USD", 2);
 
             Money result = bank.Reduce(Money.MakeFrancs(2), "USD");
 

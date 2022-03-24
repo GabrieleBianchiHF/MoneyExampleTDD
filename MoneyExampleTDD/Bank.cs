@@ -17,5 +17,10 @@ namespace MoneyExampleTDD
         {
             return fromCurrency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
         }
+
+        public void AddRate(string fromCurrency, string toCurrency, int rate)
+        {
+            ;
+        }
     }
 }
