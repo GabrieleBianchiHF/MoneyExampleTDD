@@ -117,7 +117,7 @@ namespace MoneyTests
         {
             Bank bank = new Bank();
 
-            int rate = bank.GetRate("USD", "USD");
+            double rate = bank.GetRate("USD", "USD");
 
             rate.Should().Be(1);
         }
@@ -173,7 +173,7 @@ namespace MoneyTests
             bank.AddRate("CHF", "USD", 2);
 
             Money result = bank.Reduce(tenFrancs.Plus(fiveDollars), "CHF");
-            result.Should().Be(Money.MakeDollars(12.5));
+            result.Should().Be(Money.MakeFrancs(20.0));
         }
     }
 }
