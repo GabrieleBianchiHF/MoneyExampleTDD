@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MoneyExampleTDD;
+using System;
 using Xunit;
 
 namespace MoneyTests
@@ -101,6 +102,15 @@ namespace MoneyTests
 
             result.Should().Be(Money.MakeDollars(1));
         }
+
+        [Fact ]
+        public void TestTupleEquals()
+        {
+            Tuple<string, string> currencies = new("USD", "USD");
+
+            currencies.Item1.Should().Be(currencies.Item2);
+        }
+
   
     }
 }
