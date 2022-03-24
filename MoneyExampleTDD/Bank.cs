@@ -8,12 +8,7 @@ namespace MoneyExampleTDD
 {
     public class Bank
     {
-        private readonly Dictionary<Tuple<string, string>, int> _Rates;
-
-        public Bank()
-        {
-            _Rates = new Dictionary<Tuple<string, string>, int>();
-        }
+        private readonly Dictionary<Tuple<string, string>, int> _Rates = new Dictionary<Tuple<string, string>, int>();
 
         public Money Reduce(MoneyExpression moneySource, string toCurrency)
         {
@@ -22,7 +17,10 @@ namespace MoneyExampleTDD
 
         public int GetRate(string fromCurrency, string toCurrency)
         {
-            return fromCurrency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
+            if (_Rates.TryGetValue(new Tuple<string, string>(fromCurrency, toCurrency), out int rate))
+                return rate;
+            else
+                throw new InvalidOperationException("The required from/to key is not present.");
         }
 
         public void AddRate(string fromCurrency, string toCurrency, int rate)
