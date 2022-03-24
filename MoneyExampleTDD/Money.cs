@@ -48,7 +48,7 @@
             return new Sum(this, addend);
         }
 
-        public Money Reduce(string toCurrency)
+        public Money Reduce(Bank bank, string toCurrency)
         {
             int rate = Currency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
             return new Money(_amount / rate, toCurrency);

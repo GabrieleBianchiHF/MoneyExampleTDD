@@ -10,7 +10,7 @@
         public Money First { get; }
         public Money Second { get; }
 
-        public Money Reduce(string toCurrency)
+        public Money Reduce(Bank bank, string toCurrency)
         {
             int amount = First.Amount + Second.Amount;
             return new Money(amount, toCurrency);
