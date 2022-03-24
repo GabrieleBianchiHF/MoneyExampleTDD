@@ -106,9 +106,10 @@ namespace MoneyTests
         [Fact ]
         public void TestTupleEquals()
         {
-            Tuple<string, string> currencies = new("USD", "USD");
+            Tuple<string, string> currencies1 = new("USD", "CHF");
+            Tuple<string, string> currencies2 = new("USD", "CHF");
 
-            currencies.Item1.Should().Be(currencies.Item2);
+            currencies1.Should().Be(currencies2);
         }
 
         [Fact]
