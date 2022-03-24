@@ -122,6 +122,18 @@ namespace MoneyTests
             rate.Should().Be(1);
         }
 
+        [Fact]
+        public void TestMixedCurrenciesAddition()
+        {
+            IMoneyExpression fiveDollars = Money.MakeDollars(5);
+            IMoneyExpression tenFrancs = Money.MakeFrancs(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+
+            Money result = bank.Reduce(fiveDollars.Plus(tenFrancs), "USD");
+            result.Should().Be(Money.MakeDollars(10));
+        }
+
   
     }
 }
