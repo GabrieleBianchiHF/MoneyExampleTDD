@@ -125,8 +125,8 @@ namespace MoneyTests
         [Fact]
         public void TestMixedCurrenciesAddition()
         {
-            IMoneyExpression fiveDollars = Money.MakeDollars(5);
-            IMoneyExpression tenFrancs = Money.MakeFrancs(10);
+            Money fiveDollars = Money.MakeDollars(5);
+            Money tenFrancs = Money.MakeFrancs(10);
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
 
