@@ -8,6 +8,8 @@ namespace MoneyExampleTDD
 {
     public class Bank
     {
+        private Dictionary< Tuple<string, string>, int > _Rates;
+
         public Money Reduce(MoneyExpression moneySource, string toCurrency)
         {
             return moneySource.Reduce(this, toCurrency: toCurrency);
@@ -20,7 +22,8 @@ namespace MoneyExampleTDD
 
         public void AddRate(string fromCurrency, string toCurrency, int rate)
         {
-            ;
+            _Rates.Add(key: new Tuple<string,string>(fromCurrency, toCurrency),
+                       value: rate);
         }
     }
 }
