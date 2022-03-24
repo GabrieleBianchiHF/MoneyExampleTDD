@@ -186,5 +186,31 @@ namespace MoneyTests
 
             result.Should().Be("1.00 USD");
         }
+
+        [Fact]
+        public void TestMoneySumToString()
+        {
+            Money oneDollar = Money.MakeDollars(1);
+            Money fiveFranc = Money.MakeFrancs(2);
+            IMoneyExpression sum = oneDollar.Plus(fiveFranc); 
+
+            string result = sum.ToString();
+
+            result.Should().Be("1.00 USD + 2.00 CHF");
+        }
+
+        [Fact]
+        public void TestMoneyPlusSumToString()
+        {
+            Money oneDollar = Money.MakeDollars(1);
+            Money fiveFranc = Money.MakeFrancs(2);
+            Money anotherDollar = Money.MakeDollars(1);
+            IMoneyExpression sum = oneDollar.Plus(fiveFranc);
+            IMoneyExpression additionalSum = sum.Plus(anotherDollar);
+
+            string result = additionalSum.ToString();
+
+            result.Should().Be("1.00 USD + 2.00 CHF + 1.00 USD");
+        }
     }
 }
