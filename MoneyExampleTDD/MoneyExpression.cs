@@ -9,5 +9,7 @@ namespace MoneyExampleTDD
     public interface IMoneyExpression
     {
         Money Reduce(Bank bank, string toCurrency);
+
+        IMoneyExpression Plus(IMoneyExpression addend);
     }
 }

@@ -2,13 +2,18 @@
 {
     public class Sum : IMoneyExpression
     {
-        public Sum(Money first, Money second)
+        public Sum(IMoneyExpression first, IMoneyExpression second)
         {
             First = first;
             Second = second;
         }
-        public Money First { get; }
-        public Money Second { get; }
+        public IMoneyExpression First { get; }
+        public IMoneyExpression Second { get; }
+
+        public IMoneyExpression Plus(IMoneyExpression addend)
+        {
+            return null;
+        }
 
         public Money Reduce(Bank bank, string toCurrency)
         {

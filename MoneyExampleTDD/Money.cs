@@ -27,7 +27,7 @@
             return _amount == money._amount && Currency.Equals(money.Currency);
         }
 
-        public Money Times(int multiplier)
+        public IMoneyExpression Times(int multiplier)
         {
             return new Money(_amount * multiplier, Currency);
         }
@@ -42,7 +42,7 @@
             return new Money(amount, "CHF");
         }
 
-        public IMoneyExpression Plus(Money addend)
+        public IMoneyExpression Plus(IMoneyExpression addend)
         {
             // Try obvious implementation
             return new Sum(this, addend);
