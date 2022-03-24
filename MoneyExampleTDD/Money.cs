@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MoneyExampleTDD
+﻿namespace MoneyExampleTDD
 {
     public class Money : MoneyExpression
     {
@@ -56,7 +50,8 @@ namespace MoneyExampleTDD
 
         public Money Reduce(string toCurrency)
         {
-            return this;
+            int rate = Currency.Equals("CHF") && toCurrency.Equals("USD") ? 2 : 1;
+            return new Money(_amount / rate, toCurrency);
         }
     }
 }
