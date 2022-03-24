@@ -146,16 +146,5 @@ namespace MoneyTests
             Money result = bank.Reduce(sum, "USD");
             result.Should().Be(Money.MakeDollars(15));
         }
-
-        [Fact]
-        public void TestPlusSameCurrencyReturnsMoney()
-        {
-            Money oneDollar = Money.MakeDollars(1);
-            Money anotherOneDollar = Money.MakeDollars(1);
-
-            IMoneyExpression sumOfDollars = oneDollar.Plus(anotherOneDollar);
-
-            sumOfDollars.Should().BeOfType<Money>(because: "Is a sum of two same currency money.");
-        }
     }
 }
